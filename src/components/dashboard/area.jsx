@@ -56,7 +56,7 @@ export const Area = () => {
         {areas &&
           areas.map((area, i) => (
             <li key={i}>
-              <Link to={`/areas/${area.id}`}>{area.name}</Link>
+              <Link to={`/dashboard/areas/${area.id}`}>{area.name}</Link>
             </li>
           ))}
       </ul>
