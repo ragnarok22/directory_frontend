@@ -1,20 +1,20 @@
 import axios from "axios";
 import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { DashboardLayout } from "../../layouts/dashboard";
-import { FilterBar } from "../filter/search";
-import { Loading } from "../loading";
+import { DashboardLayout } from "../../../layouts/dashboard";
+import { FilterBar } from "../../filter/search";
+import { Loading } from "../../loading";
 
-export const Area = () => {
-  const [areas, setAreas] = useState([]);
+export const Department = () => {
+  const [departments, setDepartments] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     (async () => {
       try {
         setLoading(true);
-        const { data } = await axios.get(`/areas`);
-        setAreas(data);
+        const { data } = await axios.get(`/departments`);
+        setDepartments(data);
         setLoading(false);
         console.log(data);
       } catch (error) {
@@ -28,8 +28,8 @@ export const Area = () => {
     const value = e.target.value;
     try {
       setLoading(true);
-      const { data } = await axios.get(`/areas?name=${value}`);
-      setAreas(data);
+      const { data } = await axios.get(`/departments?name=${value}`);
+      setDepartments(data);
       setLoading(false);
     } catch (error) {
       console.error(error);
@@ -53,10 +53,10 @@ export const Area = () => {
         <FilterBar className="mt-5 mb-5" onChange={handleChange} />
       </div>
       <ul>
-        {areas &&
-          areas.map((area, i) => (
+        {departments &&
+          departments.map((department, i) => (
             <li key={i}>
-              <Link to={`/dashboard/areas/${area.id}`}>{area.name}</Link>
+              <Link to={`/dashboard/departments/${department.id}`}>{department.name}</Link>
             </li>
           ))}
       </ul>

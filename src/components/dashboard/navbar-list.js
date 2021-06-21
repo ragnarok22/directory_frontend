@@ -14,7 +14,7 @@ const items = [
     text: "Areas",
   },
   {
-    link: "/dashboard",
+    link: "/dashboard/departments",
     icon: <RiHome3Line className="h-5 w-5 mr-1" />,
     text: "Departamentos",
   },
