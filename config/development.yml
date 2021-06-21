@@ -1,0 +1,3 @@
+server:
+  api_url: http://localhost:8000
+  token_key: Hk34587sdf4aSGF54AS234

@@ -1,7 +1,11 @@
 import axios from "axios";
+import * as config from "config";
 
-export const APIURL = "http://localhost:8000";
-export const TOKEN_KEY = "Hk34587sdf4aSGF54AS234";
+const serverConfig = config.get("server");
+
+export const APIURL = process.env.APIURL || serverConfig.get("api_url");
+export const TOKEN_KEY =
+  process.env.TOKEN_KEY || serverConfig.get("token:_key");
 
 axios.defaults.baseURL = APIURL;
 export let outPut = null;
