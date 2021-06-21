@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
-import { FilterBar } from "./components/filter/filter-bar";
-import { ResultFilter } from "./components/filter/results";
+import { FilterBar } from "./components/filter/search";
+import { ResultFilter } from "./components/filter/table";
 import { FilterLayout } from "./layouts/filter";
 
 const Main = () => {
@@ -26,9 +26,7 @@ const Main = () => {
   return (
     <FilterLayout>
       <FilterBar onChange={handleChange} />
-      <div className="w-full h-full">
-        <ResultFilter isLoading={isLoading} results={results} />
-      </div>
+      <ResultFilter isLoading={isLoading} results={results} />
     </FilterLayout>
   );
 };
