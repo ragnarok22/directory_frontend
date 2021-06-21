@@ -5,8 +5,8 @@ import { NavItem } from "./nav-item";
 export const Navbar = () => {
   return (
     <ul className="flex justify-around">
-      {navbarItems.map((item) => (
-        <li>
+      {navbarItems.map((item, i) => (
+        <li key={i}>
           <NavItem item={item} />
         </li>
       ))}
