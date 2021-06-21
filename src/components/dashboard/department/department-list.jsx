@@ -38,7 +38,7 @@ export const Department = () => {
 
   if (loading) {
     return (
-      <DashboardLayout>
+      <DashboardLayout selected='departments'>
         <div>
           <FilterBar className="mt-5 mb-5" onChange={handleChange} />
         </div>
@@ -48,7 +48,7 @@ export const Department = () => {
   }
 
   return (
-    <DashboardLayout>
+    <DashboardLayout selected='departments'>
       <div>
         <FilterBar className="mt-5 mb-5" onChange={handleChange} />
       </div>

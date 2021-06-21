@@ -3,7 +3,7 @@ import { DashboardLayout } from "../../layouts/dashboard";
 
 export const Dashboard = () => {
   return (
-    <DashboardLayout>
+    <DashboardLayout selected='index'>
       <p>dashboard</p>
     </DashboardLayout>
   );

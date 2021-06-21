@@ -28,14 +28,14 @@ export const DepartmentDetail = () => {
 
   if (loading) {
     return (
-      <DashboardLayout>
+      <DashboardLayout selected='departments'>
         <Loading />
       </DashboardLayout>
     );
   }
 
   return (
-    <DashboardLayout>
+    <DashboardLayout selected='departments'>
       {department && (
         <div>
           <h1 className="text-center text-2xl mt-5 mb-4">Departamento: {department.name}</h1>

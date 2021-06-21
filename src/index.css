@@ -5,3 +5,9 @@
 body {
   @apply bg-gray-200;
 }
+
+ul li.selected {
+  @apply bg-blue-600;
+  @apply text-white;
+  @apply text-lg;
+}

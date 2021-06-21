@@ -24,14 +24,14 @@ export const AreaDetail = () => {
 
   if (loading) {
     return (
-      <DashboardLayout>
+      <DashboardLayout selected='areas'>
         <Loading />
       </DashboardLayout>
     );
   }
 
   return (
-    <DashboardLayout>
+    <DashboardLayout selected='areas'>
       {area && (
         <div>
           <h1 className="text-center text-2xl mt-5 mb-4">Area: {area.name}</h1>
