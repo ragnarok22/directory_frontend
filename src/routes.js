@@ -7,6 +7,7 @@ import { Area } from "./components/dashboard/area/area-list";
 import { AreaDetail } from "./components/dashboard/area/area-detail";
 import { Department } from "./components/dashboard/department/department-list";
 import { DepartmentDetail } from "./components/dashboard/department/department-detail";
+import { AreaCreate } from "./components/dashboard/area/area-create";
 
 export const Routes = () => (
   <BrowserRouter>
@@ -15,6 +16,7 @@ export const Routes = () => (
       <Route exact path="/login" component={Login} />
       <Route exact path="/dashboard" component={Dashboard} />
       <Route exact path="/dashboard/areas" component={Area} />
+      <Route exact path="/dashboard/areas/create" component={AreaCreate} />
       <Route exact path="/dashboard/areas/:id" component={AreaDetail} />
       <Route exact path="/dashboard/departments" component={Department} />
       <Route exact path="/dashboard/departments/:id" component={DepartmentDetail} />

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { React, useState, useEffect } from "react";
+import { MdAddCircleOutline } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { DashboardLayout } from "../../../layouts/dashboard";
 import { ErrorComponent } from "../../error-page";
@@ -38,33 +39,19 @@ export const Area = () => {
     setLoading(false);
   };
 
-  if (loading) {
-    return (
-      <DashboardLayout selected="areas">
-        <div>
-          <FilterBar className="mt-5 mb-5" onChange={handleChange} />
-        </div>
-        {loading && <Loading />}
-      </DashboardLayout>
-    );
-  }
-
-  if (error) {
-    return (
-      <DashboardLayout selected="areas">
-        <div>
-          <FilterBar className="mt-5 mb-5" onChange={handleChange} />
-        </div>
-        {error && <ErrorComponent />}
-      </DashboardLayout>
-    );
-  }
-
   return (
     <DashboardLayout selected="areas">
-      <div>
+      <div className="flex mt-3 justify-between">
         <FilterBar className="mt-5 mb-5" onChange={handleChange} />
+        <Link
+          to="/dashboard/areas/create"
+          className="rounded-full  w-1/5 bg-green-300 flex justify-center items-center text-white my-3"
+        >
+          <MdAddCircleOutline />
+        </Link>
       </div>
+      {error && <ErrorComponent />}
+      {loading && <Loading />}
       <ul>
         {areas &&
           areas.map((area, i) => (
