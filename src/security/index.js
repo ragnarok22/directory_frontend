@@ -38,7 +38,10 @@ export const initAxiosInterceptors = () => {
   axios.interceptors.response.use(
     (response) => response,
     (error) => {
-      if (error?.response?.status === 401) {
+      if(!error.response){
+        outPut = "Please check your internet connection";
+        console.log(outPut);
+      } else if (error?.response?.status === 401) {
         outPut = "Wrong user or password";
         //outPut = error?.response?.data.message
       } else if (error?.response?.status === 403) {

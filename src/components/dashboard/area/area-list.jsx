@@ -2,12 +2,14 @@ import axios from "axios";
 import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { DashboardLayout } from "../../../layouts/dashboard";
+import { ErrorComponent } from "../../error-page";
 import { FilterBar } from "../../filter/search";
 import { Loading } from "../../loading";
 
 export const Area = () => {
   const [areas, setAreas] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -15,11 +17,11 @@ export const Area = () => {
         setLoading(true);
         const { data } = await axios.get(`/areas`);
         setAreas(data);
-        setLoading(false);
         console.log(data);
       } catch (error) {
-        console.error(error);
+        setError(true);
       }
+      setLoading(false);
     })();
   }, []);
 
@@ -30,10 +32,10 @@ export const Area = () => {
       setLoading(true);
       const { data } = await axios.get(`/areas?name=${value}`);
       setAreas(data);
-      setLoading(false);
     } catch (error) {
       console.error(error);
     }
+    setLoading(false);
   };
 
   if (loading) {
@@ -43,6 +45,17 @@ export const Area = () => {
           <FilterBar className="mt-5 mb-5" onChange={handleChange} />
         </div>
         {loading && <Loading />}
+      </DashboardLayout>
+    );
+  }
+
+  if (error) {
+    return (
+      <DashboardLayout selected='areas'>
+        <div>
+          <FilterBar className="mt-5 mb-5" onChange={handleChange} />
+        </div>
+        {error && <ErrorComponent />}
       </DashboardLayout>
     );
   }
