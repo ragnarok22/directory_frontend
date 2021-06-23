@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 import { DashboardLayout } from "../../../layouts/dashboard";
 import { FilterBar } from "../../filter/search";
 import { Loading } from "../../loading";
+import { ErrorComponent } from "../../error-page";
 
 export const Department = () => {
   const [departments, setDepartments] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -15,11 +17,12 @@ export const Department = () => {
         setLoading(true);
         const { data } = await axios.get(`/departments`);
         setDepartments(data);
-        setLoading(false);
         console.log(data);
       } catch (error) {
         console.error(error);
+        setError(true);
       }
+      setLoading(false);
     })();
   }, []);
 
@@ -43,6 +46,15 @@ export const Department = () => {
           <FilterBar className="mt-5 mb-5" onChange={handleChange} />
         </div>
         {loading && <Loading />}
+      </DashboardLayout>
+    );
+  } else if (error) {
+    return (
+      <DashboardLayout selected='areas'>
+        <div>
+          <FilterBar className="mt-5 mb-5" onChange={handleChange} />
+        </div>
+        {error && <ErrorComponent />}
       </DashboardLayout>
     );
   }
