@@ -41,7 +41,9 @@ export const AreaDetail = () => {
           <ul>
             {area.departments.map((department) => (
               <li key={department.id}>
-                <Link to={`/dashboard/departments/${department.id}`}>{department.name}</Link>
+                <Link to={`/dashboard/departments/${department.id}`}>
+                  {department.name}
+                </Link>
               </li>
             ))}
           </ul>

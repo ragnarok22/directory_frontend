@@ -40,7 +40,7 @@ export const Area = () => {
 
   if (loading) {
     return (
-      <DashboardLayout selected='areas'>
+      <DashboardLayout selected="areas">
         <div>
           <FilterBar className="mt-5 mb-5" onChange={handleChange} />
         </div>
@@ -51,7 +51,7 @@ export const Area = () => {
 
   if (error) {
     return (
-      <DashboardLayout selected='areas'>
+      <DashboardLayout selected="areas">
         <div>
           <FilterBar className="mt-5 mb-5" onChange={handleChange} />
         </div>
@@ -61,7 +61,7 @@ export const Area = () => {
   }
 
   return (
-    <DashboardLayout selected='areas'>
+    <DashboardLayout selected="areas">
       <div>
         <FilterBar className="mt-5 mb-5" onChange={handleChange} />
       </div>

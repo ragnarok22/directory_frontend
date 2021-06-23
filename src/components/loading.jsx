@@ -2,7 +2,6 @@ import React from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 export const Loading = ({ spinning = true }) => {
-
   return (
     <div className="w-full h-full flex justify-center items-center">
       <AiOutlineLoading3Quarters

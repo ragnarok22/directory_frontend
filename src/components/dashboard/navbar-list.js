@@ -4,19 +4,19 @@ import { RiHome3Line } from "react-icons/ri";
 
 const items = [
   {
-    name: 'index',
+    name: "index",
     link: "/dashboard",
     icon: <MdDashboard className="h-5 w-5 mr-1" />,
     text: "Inicio",
   },
   {
-    name: 'areas',
+    name: "areas",
     link: "/dashboard/areas",
     icon: <GoHome className="h-5 w-5 mr-1" />,
     text: "Areas",
   },
   {
-    name: 'departments',
+    name: "departments",
     link: "/dashboard/departments",
     icon: <RiHome3Line className="h-5 w-5 mr-1" />,
     text: "Departamentos",

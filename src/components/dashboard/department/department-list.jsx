@@ -41,7 +41,7 @@ export const Department = () => {
 
   if (loading) {
     return (
-      <DashboardLayout selected='departments'>
+      <DashboardLayout selected="departments">
         <div>
           <FilterBar className="mt-5 mb-5" onChange={handleChange} />
         </div>
@@ -50,7 +50,7 @@ export const Department = () => {
     );
   } else if (error) {
     return (
-      <DashboardLayout selected='areas'>
+      <DashboardLayout selected="areas">
         <div>
           <FilterBar className="mt-5 mb-5" onChange={handleChange} />
         </div>
@@ -60,7 +60,7 @@ export const Department = () => {
   }
 
   return (
-    <DashboardLayout selected='departments'>
+    <DashboardLayout selected="departments">
       <div>
         <FilterBar className="mt-5 mb-5" onChange={handleChange} />
       </div>
@@ -68,7 +68,9 @@ export const Department = () => {
         {departments &&
           departments.map((department, i) => (
             <li key={i}>
-              <Link to={`/dashboard/departments/${department.id}`}>{department.name}</Link>
+              <Link to={`/dashboard/departments/${department.id}`}>
+                {department.name}
+              </Link>
             </li>
           ))}
       </ul>

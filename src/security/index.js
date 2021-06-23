@@ -38,7 +38,7 @@ export const initAxiosInterceptors = () => {
   axios.interceptors.response.use(
     (response) => response,
     (error) => {
-      if(!error.response){
+      if (!error.response) {
         outPut = "Please check your internet connection";
         console.log(outPut);
       } else if (error?.response?.status === 401) {

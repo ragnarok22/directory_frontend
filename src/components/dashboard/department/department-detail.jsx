@@ -17,7 +17,7 @@ export const DepartmentDetail = () => {
         setDepartment(data);
         console.log(data);
       } catch (error) {
-        if(error.response.status){
+        if (error.response.status) {
           // not found
         } else {
           console.error(error);
@@ -29,21 +29,23 @@ export const DepartmentDetail = () => {
 
   if (loading) {
     return (
-      <DashboardLayout selected='departments'>
+      <DashboardLayout selected="departments">
         <Loading />
       </DashboardLayout>
     );
   }
 
   return (
-    <DashboardLayout selected='departments'>
+    <DashboardLayout selected="departments">
       {department && (
         <div>
-          <h1 className="text-center text-2xl mt-5 mb-4">Departamento: {department.name}</h1>
+          <h1 className="text-center text-2xl mt-5 mb-4">
+            Departamento: {department.name}
+          </h1>
 
           <h2 className="text-center text-xl">Teléfonos</h2>
           <ul>
-            {department.phones.map(phone => (
+            {department.phones.map((phone) => (
               <li key={phone.id}>
                 <a href={`tel:${phone.number}`}>{phone.number}</a>
               </li>
