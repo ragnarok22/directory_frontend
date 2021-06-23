@@ -8,6 +8,7 @@ import { AreaDetail } from "./components/dashboard/area/area-detail";
 import { Department } from "./components/dashboard/department/department-list";
 import { DepartmentDetail } from "./components/dashboard/department/department-detail";
 import { AreaCreate } from "./components/dashboard/area/area-create";
+import { DepartmentCreate } from "./components/dashboard/department/department-create";
 
 export const Routes = () => (
   <BrowserRouter>
@@ -19,6 +20,7 @@ export const Routes = () => (
       <Route exact path="/dashboard/areas/create" component={AreaCreate} />
       <Route exact path="/dashboard/areas/:id" component={AreaDetail} />
       <Route exact path="/dashboard/departments" component={Department} />
+      <Route exact path="/dashboard/departments/create" component={DepartmentCreate} />
       <Route exact path="/dashboard/departments/:id" component={DepartmentDetail} />
       <Route component={NotFound} />
     </Switch>

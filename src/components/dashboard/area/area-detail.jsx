@@ -38,6 +38,7 @@ export const AreaDetail = () => {
           <h1 className="text-center text-2xl mt-5 mb-4">Area: {area.name}</h1>
 
           <h2 className="text-center text-xl">Departamentos</h2>
+          <Link to="/dashboard/departments/create">Agregar departamento</Link>
           <ul>
             {area.departments.map((department) => (
               <li key={department.id}>
