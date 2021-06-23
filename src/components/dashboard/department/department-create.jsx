@@ -23,7 +23,7 @@ export const DepartmentCreate = () => {
         name,
         campus,
       });
-      history.push("/dashboard/departments");
+      history.push(`/dashboard/departments/${data.id}`);
     } catch (error) {
       console.error(error);
       console.log(error.response);
