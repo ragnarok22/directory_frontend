@@ -3,7 +3,7 @@ import { useState } from "react";
 import { React, useEffect } from "react";
 import { Loading } from "../../loading";
 import { DashboardLayout } from "../../../layouts/dashboard";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export const DepartmentDetail = () => {
   const { id } = useParams();
@@ -44,6 +44,7 @@ export const DepartmentDetail = () => {
           </h1>
 
           <h2 className="text-center text-xl">Teléfonos</h2>
+          <Link to="/dashboard/phones/create">Agregar telefono</Link>
           <ul>
             {department.phones.map((phone) => (
               <li key={phone.id}>
