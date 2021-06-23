@@ -24,8 +24,8 @@ export const ResultFilter = ({ results, isLoading }) => {
     return <Loading />;
   }
   if (data?.length > 0) {
-    return data.map((result) => (
-      <div key={result.id}>
+    return data.map((result, i) => (
+      <div key={i}>
         <p>{result.area}</p>
         <ListItem items={result.departments} />
       </div>
