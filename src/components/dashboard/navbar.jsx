@@ -8,7 +8,7 @@ export const Navbar = ({selected, className}) => {
     <ul className={`flex justify-around ${className}`}>
       {navbarItems.map((item, i) => (
         <li key={i} className={`flex-grow ${item.name === selected ? 'selected':''}`}>
-          <NavItem item={item} />
+          <NavItem item={item} selected={selected} />
         </li>
       ))}
     </ul>
